@@ -2243,6 +2243,7 @@ MonoBehaviour:
   moveSpeed: 10
   playerBody: {fileID: 1533811131}
   horizontalSpeed: 1
+  groundFollow: {fileID: 699642152}
   diedScreen: {fileID: 1441031372}
 --- !u!54 &1533811131
 Rigidbody:

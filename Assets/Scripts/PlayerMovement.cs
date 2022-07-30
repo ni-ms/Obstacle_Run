@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     public float horizontalSpeed = 0.5f;
     float horizontalInput;
 
+    public GameObject groundFollow;
+
     public DiedScreen diedScreen;
  
     private void FixedUpdate()
@@ -26,11 +28,21 @@ public class PlayerMovement : MonoBehaviour
         Time.timeScale = 1f;
     }
 
+    public bool isOutOfGround()
+    {
+        bool left = playerBody.transform.position.x < groundFollow.transform.position.x;
+        bool right = playerBody.transform.position.x >( groundFollow.transform.position.x + 5);
+        if(left || right)
+        {
+            return true;
+        }
+        return false;
+    }
     // Update is called once per frame
     void Update()
     {
         horizontalInput = Input.GetAxis("Horizontal");
-        if (!alive)
+        if (!alive || isOutOfGround())
         {
             
             diedScreen.enableScreen();

@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    
+
+    public bool alive = true;
     public float moveSpeed = 1;
     public Rigidbody playerBody;
     public float horizontalSpeed = 0.5f;
     float horizontalInput;
+
+    public DiedScreen diedScreen;
  
     private void FixedUpdate()
     {
@@ -19,12 +22,30 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        alive = true;
+        Time.timeScale = 1f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        horizontalInput = Input.GetAxis("Horizontal");   
+        horizontalInput = Input.GetAxis("Horizontal");
+        if (!alive)
+        {
+            
+            diedScreen.enableScreen();
+            alive = false;
+            Time.timeScale = 0.0f;
+        }
     }
+    public bool getAlive()
+    {
+        return alive;
+    }
+    public void setAlive(bool val)
+    {
+        alive = val;
+    }
+  
+   
 }

@@ -10,10 +10,7 @@ public class DeleteGround : MonoBehaviour
     {
      groundSpawner = GameObject.FindObjectOfType<SpawnTile>();     
     }
-    private void OnTriggerExit(Collider other)
-    {
-        Destroy(gameObject, 2);
-    }
+    
 
     // Update is called once per frame
     void Update()

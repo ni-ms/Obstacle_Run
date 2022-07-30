@@ -5,11 +5,11 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     
-    public float moveSpeed = 5;
+    public float moveSpeed = 1;
     public Rigidbody playerBody;
-
+    public float horizontalSpeed = 0.5f;
     float horizontalInput;
-    float horizontalSpeed = 2;
+ 
     private void FixedUpdate()
     {
         Vector3 moveForward = transform.forward * moveSpeed * Time.fixedDeltaTime;

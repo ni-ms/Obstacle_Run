@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewPlayerMove : MonoBehaviour
+public class TurnPlayerMove : MonoBehaviour
 {
     private bool turnLeft, turnRight;
     public float speed = 5.0f;

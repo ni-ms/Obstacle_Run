@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnTile : MonoBehaviour
+public class TurnSpawnTile : MonoBehaviour
 {
     public GameObject tileToSpawn;
     public GameObject tileToSpawnTurn;
